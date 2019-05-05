@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 
 public class CalculatorInterface {
+
     private JButton buttonNumber1;
     private JButton buttonNumber2;
     private JButton buttonNumber3;
@@ -15,14 +16,22 @@ public class CalculatorInterface {
     private JButton buttonNumber8;
     private JButton buttonNumber9;
     private JButton buttonNumber0;
+
     private JButton buttonAdd;
     private JButton buttonSubstract;
     private JButton buttonMultiplicate;
     private JButton buttonCalculate;
-    public JPanel panelMain;
-    private JLabel resultLabel;
     private JButton buttonReset;
     private JButton buttonDivide;
+
+    private JButton buttonLeftParenthesis;
+    private JButton buttonRightParenthesis;
+    private JButton buttonComma;
+
+    public JPanel panelMain;
+    private JPanel panelResult;
+
+    private JLabel resultLabel;
 
     public CalculatorInterface() {
         JFrame frame = new JFrame("Calculator");
@@ -31,11 +40,7 @@ public class CalculatorInterface {
         frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
-        resultLabel.setText("Hello");
-    }
-
-    public void setResult(float result){
-        resultLabel.setText(""+result+"");
+        resultLabel.setText("Let's do some Maths");
     }
 
     public String getButtonValue(String pButton){
@@ -58,7 +63,10 @@ public class CalculatorInterface {
             ActionListener buttonMultiplicateListener,
             ActionListener buttonDivideListener,
             ActionListener buttonCalculateListener,
-            ActionListener buttonResetListener
+            ActionListener buttonResetListener,
+            ActionListener buttonLeftParenthesisListener,
+            ActionListener buttonRightParenthesisListener,
+            ActionListener buttonCommaListener
     ){
         buttonNumber0.addActionListener(button0Listener);
         buttonNumber1.addActionListener(button1Listener);
@@ -76,6 +84,9 @@ public class CalculatorInterface {
         buttonDivide.addActionListener(buttonDivideListener);
         buttonCalculate.addActionListener(buttonCalculateListener);
         buttonReset.addActionListener(buttonResetListener);
+        buttonLeftParenthesis.addActionListener(buttonLeftParenthesisListener);
+        buttonRightParenthesis.addActionListener(buttonRightParenthesisListener);
+        buttonComma.addActionListener(buttonCommaListener);
     }
 
     public void setOperationsLabel(String operations){

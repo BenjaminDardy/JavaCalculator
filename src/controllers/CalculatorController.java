@@ -31,6 +31,9 @@ public class CalculatorController {
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener()
         );
     }

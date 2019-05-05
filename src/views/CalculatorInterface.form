@@ -133,7 +133,7 @@
         </constraints>
         <properties>
           <actionCommand value="="/>
-          <text value="Calcul"/>
+          <text value="="/>
         </properties>
       </component>
       <component id="fb6cb" class="javax.swing.JButton" binding="buttonDivide">
@@ -146,14 +146,6 @@
           <text value="/"/>
         </properties>
       </component>
-      <component id="d32f9" class="javax.swing.JLabel" binding="resultLabel">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
       <component id="36289" class="javax.swing.JButton" binding="buttonReset">
         <constraints>
           <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -162,6 +154,59 @@
           <actionCommand value="CE"/>
           <label value="CE"/>
           <text value="CE"/>
+        </properties>
+      </component>
+      <grid id="62f16" binding="panelResult" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <autoscrolls value="false"/>
+          <background color="-4473925"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="d32f9" class="javax.swing.JLabel" binding="resultLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <opaque value="false"/>
+              <text value="Label"/>
+              <visible value="true"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <component id="dcddb" class="javax.swing.JButton" binding="buttonLeftParenthesis">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="("/>
+          <label value="("/>
+          <text value="("/>
+        </properties>
+      </component>
+      <component id="ce7dc" class="javax.swing.JButton" binding="buttonRightParenthesis">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value=")"/>
+          <label value=")"/>
+          <text value=")"/>
+        </properties>
+      </component>
+      <component id="322a5" class="javax.swing.JButton" binding="buttonComma">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="."/>
+          <label value=","/>
+          <text value=","/>
         </properties>
       </component>
     </children>
