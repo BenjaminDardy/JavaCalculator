@@ -1,7 +1,10 @@
 package views;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class CalculatorInterface {
@@ -33,12 +36,20 @@ public class CalculatorInterface {
 
     private JLabel resultLabel;
 
-    public CalculatorInterface() {
+    public CalculatorInterface() throws MalformedURLException {
         JFrame frame = new JFrame("Calculator");
         frame.setContentPane(panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
-        frame.pack();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        //frame.pack();
+        frame.setBounds(0,0,screenSize.width * 15/100, screenSize.height * 23/100);
+
+        URL url = ClassLoader.getSystemResource("views/Img/calculator.png");
+        Toolkit kit = Toolkit.getDefaultToolkit();
+        Image img = kit.createImage(url);
+        frame.setIconImage(img);
+
         frame.setVisible(true);
         resultLabel.setText("Let's do some Maths");
     }
