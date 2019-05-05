@@ -1,7 +1,6 @@
 package views;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
@@ -19,9 +18,11 @@ public class CalculatorInterface {
     private JButton buttonAdd;
     private JButton buttonSubstract;
     private JButton buttonMultiplicate;
-    private JButton calculButton;
+    private JButton buttonCalculate;
     public JPanel panelMain;
     private JLabel resultLabel;
+    private JButton buttonReset;
+    private JButton buttonDivide;
 
     public CalculatorInterface() {
         JFrame frame = new JFrame("Calculator");
@@ -30,9 +31,7 @@ public class CalculatorInterface {
         frame.setResizable(false);
         frame.pack();
         frame.setVisible(true);
-
         resultLabel.setText("Hello");
-
     }
 
     public void setResult(float result){
@@ -57,7 +56,9 @@ public class CalculatorInterface {
             ActionListener buttonAddListener,
             ActionListener buttonSubstractListener,
             ActionListener buttonMultiplicateListener,
-            ActionListener buttonCalculateListener
+            ActionListener buttonDivideListener,
+            ActionListener buttonCalculateListener,
+            ActionListener buttonResetListener
     ){
         buttonNumber0.addActionListener(button0Listener);
         buttonNumber1.addActionListener(button1Listener);
@@ -72,7 +73,12 @@ public class CalculatorInterface {
         buttonAdd.addActionListener(buttonAddListener);
         buttonSubstract.addActionListener(buttonSubstractListener);
         buttonMultiplicate.addActionListener(buttonMultiplicateListener);
-        calculButton.addActionListener(buttonCalculateListener);
+        buttonDivide.addActionListener(buttonDivideListener);
+        buttonCalculate.addActionListener(buttonCalculateListener);
+        buttonReset.addActionListener(buttonResetListener);
+    }
 
+    public void setOperationsLabel(String operations){
+        resultLabel.setText(operations);
     }
 }

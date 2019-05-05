@@ -3,6 +3,7 @@ package controllers;
 import models.CalculatorModel;
 import views.CalculatorInterface;
 
+import javax.script.ScriptException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,6 +29,8 @@ public class CalculatorController {
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener()
         );
     }
@@ -37,16 +40,28 @@ public class CalculatorController {
         @Override
         public void actionPerformed(ActionEvent e) {
                 String buttonClicked = calculatorInterface.getButtonValue(e.getActionCommand());
-                switch (buttonClicked){
-                    case "Calcul":
-                        calculatorModel.calculate();
-                        break;
-                    default:
-                        calculatorModel.combineNumber(buttonClicked);
-                        break;
+
+                if (calculatorModel.getResult().equals("Infinity")){
+                    calculatorModel.setOperations("");
+                    calculatorModel.setResult("");
                 }
 
-
+                    switch (buttonClicked){
+                        case "=":
+                            try {
+                                calculatorInterface.setOperationsLabel(calculatorModel.calculate());
+                            } catch (ScriptException ex) {
+                                ex.printStackTrace();
+                            }
+                            break;
+                        case "CE":
+                            calculatorModel.resetOperation();
+                            calculatorInterface.setOperationsLabel("0");
+                            break;
+                        default:
+                            calculatorInterface.setOperationsLabel(calculatorModel.combineNumber(buttonClicked));
+                            break;
+                    }
         }
     }
 }
