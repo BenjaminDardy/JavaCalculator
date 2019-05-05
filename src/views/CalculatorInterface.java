@@ -36,7 +36,7 @@ public class CalculatorInterface {
 
     private JLabel resultLabel;
 
-    public CalculatorInterface() throws MalformedURLException {
+    public CalculatorInterface() {
         JFrame frame = new JFrame("Calculator");
         frame.setContentPane(panelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
