@@ -34,6 +34,7 @@ public class CalculatorController {
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener(),
+                new buttonNumberAndOperationsListener(),
                 new buttonNumberAndOperationsListener()
         );
     }
@@ -57,9 +58,12 @@ public class CalculatorController {
                                 ex.printStackTrace();
                             }
                             break;
-                        case "CE":
+                        case "C":
                             calculatorModel.resetOperation();
                             calculatorInterface.setOperationsLabel("0");
+                            break;
+                        case "delete":
+                            calculatorInterface.setOperationsLabel(calculatorModel.deleteLastOperation());
                             break;
                         default:
                             calculatorInterface.setOperationsLabel(calculatorModel.combineNumber(buttonClicked));

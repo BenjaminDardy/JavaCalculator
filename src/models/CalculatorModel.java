@@ -35,6 +35,12 @@ public class CalculatorModel {
         return this.getOperations();
     }
 
+    public String deleteLastOperation(){
+        System.out.println(operations.substring(0, operations.length() - 1));
+        this.setOperations(operations.substring(0, operations.length() - 1));
+        return this.getOperations();
+    }
+
 //  GETTERS AND SETTERS
     public String getResult() {
         return result;

@@ -11,7 +11,5 @@ public class Main {
 
         CalculatorController theController = new CalculatorController(theModel,theView);
 
-
-
     }
 }

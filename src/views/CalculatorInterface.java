@@ -24,8 +24,9 @@ public class CalculatorInterface {
     private JButton buttonSubstract;
     private JButton buttonMultiplicate;
     private JButton buttonCalculate;
-    private JButton buttonReset;
     private JButton buttonDivide;
+    private JButton buttonReset;
+    private JButton buttonDelete;
 
     private JButton buttonLeftParenthesis;
     private JButton buttonRightParenthesis;
@@ -35,6 +36,7 @@ public class CalculatorInterface {
     private JPanel panelResult;
 
     private JLabel resultLabel;
+
 
     public CalculatorInterface() {
         JFrame frame = new JFrame("Calculator");
@@ -77,7 +79,8 @@ public class CalculatorInterface {
             ActionListener buttonResetListener,
             ActionListener buttonLeftParenthesisListener,
             ActionListener buttonRightParenthesisListener,
-            ActionListener buttonCommaListener
+            ActionListener buttonCommaListener,
+            ActionListener buttonDeleteListener
     ){
         buttonNumber0.addActionListener(button0Listener);
         buttonNumber1.addActionListener(button1Listener);
@@ -98,6 +101,7 @@ public class CalculatorInterface {
         buttonLeftParenthesis.addActionListener(buttonLeftParenthesisListener);
         buttonRightParenthesis.addActionListener(buttonRightParenthesisListener);
         buttonComma.addActionListener(buttonCommaListener);
+        buttonDelete.addActionListener(buttonDeleteListener);
     }
 
     public void setOperationsLabel(String operations){
